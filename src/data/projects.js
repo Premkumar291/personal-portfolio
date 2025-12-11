@@ -1,5 +1,5 @@
 //Images for WeatherApp
-import weatherAppImage1 from '../assets/Projects/WeatherApp/WeatherApp1.png';
+import weatherAppImage1 from '../assets/Projects/WeatherApp/';
 import weatherAppImage2 from '../assets/Projects/WeatherApp/WeatherApp2.png';
 import weatherAppImage3 from '../assets/Projects/WeatherApp/WeatherApp3.png';
 import weatherAppImage4 from '../assets/Projects/WeatherApp/WeatherApp4.png';
