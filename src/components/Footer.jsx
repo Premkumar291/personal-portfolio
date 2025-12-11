@@ -72,7 +72,7 @@ const Footer = () => {
         <footer className="relative z-10 bg-[#0f0f11] border-t border-gray-800 py-12">
             <div className="max-w-7xl mx-auto px-6">
                 {/* Main Footer Content */}
-                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 mb-8">
+                <div className="flex flex-col lg:flex-row justify-between items-center lg:items-center gap-8 mb-8">
                     {/* Brand Section */}
                     <div className="text-center lg:text-left">
                         <a href="#" className="text-2xl font-bold text-white tracking-tighter">
@@ -84,7 +84,7 @@ const Footer = () => {
                     </div>
 
                     {/* Contact Information */}
-                    <div className="flex flex-col gap-3 text-sm text-gray-400">
+                    <div className="flex flex-col gap-3 text-sm text-gray-400 text-center lg:text-left items-center lg:items-start">
                         <h3 className="text-white font-semibold mb-1">Contact</h3>
                         {contactInfo.map((contact, index) => {
                             const IconComponent = contact.icon;
@@ -102,7 +102,7 @@ const Footer = () => {
                     </div>
 
                     {/* Social Links */}
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-3 items-center lg:items-start">
                         <h3 className="text-white font-semibold text-sm mb-1">Connect</h3>
                         <div className="flex gap-4">
                             {socialLinks.map((social, index) => {

@@ -1,7 +1,46 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useEffect } from 'react';
 
 const Hero = () => {
+    const controls1 = useAnimation();
+    const controls2 = useAnimation();
+    const controls3 = useAnimation();
+    const controls4 = useAnimation();
+    const controls5 = useAnimation();
+
+    useEffect(() => {
+        // Drop animation first, then switch to floating
+        const animateCapsule = async (controls, floatY, floatX, duration, delay = 0) => {
+            // Wait for delay
+            if (delay > 0) {
+                await new Promise(resolve => setTimeout(resolve, delay * 1000));
+            }
+            // Drop from top
+            await controls.start({
+                y: 0,
+                opacity: 1,
+                transition: { duration: 0.8, ease: "easeOut" }
+            });
+            // Start floating
+            controls.start({
+                y: [0, floatY, 0],
+                x: [0, floatX, 0],
+                transition: {
+                    duration: duration,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }
+            });
+        };
+
+        animateCapsule(controls1, -20, 15, 3, 0);
+        animateCapsule(controls2, 25, -20, 3.5, 0.15);
+        animateCapsule(controls3, 30, 10, 4, 0.3);
+        animateCapsule(controls4, -15, -25, 3.2, 0.45);
+        animateCapsule(controls5, 20, 18, 3.8, 0.6);
+    }, [controls1, controls2, controls3, controls4, controls5]);
+
     return (
         <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-black">
             {/* Background Capsule Shapes */}
@@ -10,132 +49,57 @@ const Hero = () => {
             <motion.div
                 className="absolute w-[300px] h-[90px] left-[10%] top-[25%] rounded-[285px] z-30"
                 style={{
-                    background: 'linear-gradient(90deg, rgba(132, 132, 140, 0.09) 6.9%, rgba(192, 192, 192, 0.26) 48.85%, rgba(132, 132, 140, 0.09) 84.2%)'
+                    background: 'linear-gradient(90deg, rgba(132, 132, 140, 0.3) 6.9%, rgba(192, 192, 192, 0.6) 48.85%, rgba(132, 132, 140, 0.3) 84.2%)',
+                    transform: 'rotate(49.67deg)'
                 }}
-                initial={{ y: -1000, opacity: 0, rotate: 49.67 }}
-                animate={{
-                    y: [0, -20, 0],
-                    x: [0, 15, 0],
-                    opacity: 1,
-                    rotate: 49.67,
-                    transition: {
-                        y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 },
-                        x: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 },
-                        opacity: { duration: 0.5, delay: 0 }
-                    }
-                }}
-                transition={{
-                    type: "spring",
-                    damping: 12,
-                    stiffness: 100,
-                    delay: 0
-                }}
+                initial={{ y: -1000, opacity: 0 }}
+                animate={controls1}
             />
 
             {/* Bottom Right Capsule */}
             <motion.div
                 className="absolute w-[300px] h-[90px] left-[77%] top-[73%] rounded-[285px] z-30"
                 style={{
-                    background: 'linear-gradient(90deg, rgba(132, 132, 140, 0.09) 6.9%, rgba(192, 192, 192, 0.26) 48.85%, rgba(132, 132, 140, 0.09) 84.2%)'
+                    background: 'linear-gradient(90deg, rgba(132, 132, 140, 0.3) 6.9%, rgba(192, 192, 192, 0.6) 48.85%, rgba(132, 132, 140, 0.3) 84.2%)',
+                    transform: 'rotate(27.56deg)'
                 }}
-                initial={{ y: -1000, opacity: 0, rotate: 27.56 }}
-                animate={{
-                    y: [0, 25, 0],
-                    x: [0, -20, 0],
-                    opacity: 1,
-                    rotate: 27.56,
-                    transition: {
-                        y: { duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1.2 },
-                        x: { duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1.2 },
-                        opacity: { duration: 0.5, delay: 0.2 }
-                    }
-                }}
-                transition={{
-                    type: "spring",
-                    damping: 12,
-                    stiffness: 100,
-                    delay: 0.2
-                }}
+                initial={{ y: -1000, opacity: 0 }}
+                animate={controls2}
             />
 
             {/* Bottom Left Capsule */}
             <motion.div
                 className="absolute w-[300px] h-[90px] rounded-[285px] z-30"
                 style={{
-                    background: 'linear-gradient(90deg, rgba(132, 132, 140, 0.09) 6.9%, rgba(192, 192, 192, 0.26) 48.85%, rgba(132, 132, 140, 0.09) 84.2%)',
+                    background: 'linear-gradient(90deg, rgba(132, 132, 140, 0.3) 6.9%, rgba(192, 192, 192, 0.6) 48.85%, rgba(132, 132, 140, 0.3) 84.2%)',
+                    transform: 'rotate(-14.18deg)',
                     left: '188px',
                     top: '500px'
                 }}
-                initial={{ y: -1000, opacity: 0, rotate: -14.18 }}
-                animate={{
-                    y: [0, 30, 0],
-                    x: [0, 10, 0],
-                    opacity: 1,
-                    rotate: -14.18,
-                    transition: {
-                        y: { duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1.4 },
-                        x: { duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1.4 },
-                        opacity: { duration: 0.5, delay: 0.4 }
-                    }
-                }}
-                transition={{
-                    type: "spring",
-                    damping: 12,
-                    stiffness: 100,
-                    delay: 0.4
-                }}
+                initial={{ y: -1000, opacity: 0 }}
+                animate={controls3}
             />
 
             {/* Top Right Capsule */}
             <motion.div
                 className="absolute w-[300px] h-[90px] left-[75%] top-[30%] rounded-[285px] z-30"
                 style={{
-                    background: 'linear-gradient(90deg, rgba(132, 132, 140, 0.09) 6.9%, rgba(192, 192, 192, 0.26) 48.85%, rgba(132, 132, 140, 0.09) 84.2%)'
+                    background: 'linear-gradient(90deg, rgba(132, 132, 140, 0.3) 6.9%, rgba(192, 192, 192, 0.6) 48.85%, rgba(132, 132, 140, 0.3) 84.2%)',
+                    transform: 'rotate(-23.94deg)'
                 }}
-                initial={{ y: -1000, opacity: 0, rotate: -23.94 }}
-                animate={{
-                    y: [0, -15, 0],
-                    x: [0, -25, 0],
-                    opacity: 1,
-                    rotate: -23.94,
-                    transition: {
-                        y: { duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1.6 },
-                        x: { duration: 5.5, repeat: Infinity, ease: "easeInOut", delay: 1.6 },
-                        opacity: { duration: 0.5, delay: 0.6 }
-                    }
-                }}
-                transition={{
-                    type: "spring",
-                    damping: 12,
-                    stiffness: 100,
-                    delay: 0.6
-                }}
+                initial={{ y: -1000, opacity: 0 }}
+                animate={controls4}
             />
 
             {/* Middle Capsule */}
             <motion.div
                 className="absolute w-[300px] h-[90px] left-[50%] top-[50%] rounded-[285px] z-30"
                 style={{
-                    background: 'linear-gradient(90deg, rgba(132, 132, 140, 0.09) 6.9%, rgba(192, 192, 192, 0.26) 48.85%, rgba(132, 132, 140, 0.09) 84.2%)'
+                    background: 'linear-gradient(90deg, rgba(132, 132, 140, 0.3) 6.9%, rgba(192, 192, 192, 0.6) 48.85%, rgba(132, 132, 140, 0.3) 84.2%)',
+                    transform: 'rotate(-39.86deg)'
                 }}
-                initial={{ y: -1000, opacity: 0, rotate: -39.86 }}
-                animate={{
-                    y: [0, 20, 0],
-                    x: [0, 18, 0],
-                    opacity: 1,
-                    rotate: -39.86,
-                    transition: {
-                        y: { duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 1.8 },
-                        x: { duration: 6.5, repeat: Infinity, ease: "easeInOut", delay: 1.8 },
-                        opacity: { duration: 0.5, delay: 0.8 }
-                    }
-                }}
-                transition={{
-                    type: "spring",
-                    damping: 12,
-                    stiffness: 100,
-                    delay: 0.8
-                }}
+                initial={{ y: -1000, opacity: 0 }}
+                animate={controls5}
             />
 
             {/* Main Content */}
@@ -143,7 +107,7 @@ const Hero = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
                 >
                     {/* Main Heading */}
                     <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight whitespace-nowrap">
