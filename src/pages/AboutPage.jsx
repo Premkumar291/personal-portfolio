@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
 import { Background } from '../components/backgroundAnimation';
 import Footer from '../components/Footer';
 
 const AboutPage = () => {
+    // Scroll to top on mount
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const skills = {
-        left: ['JavaScript', 'React.js ', 'CSS - Tailwind CSS' , 'CSS - Bootstrap'],
+        left: ['JavaScript', 'React.js ', 'CSS - Tailwind CSS', 'CSS - Bootstrap'],
         right: ['Node.js - Express', 'MySQL - MongoDB', 'Git - Github']
     };
 
@@ -35,94 +40,120 @@ const AboutPage = () => {
 
     return (
         <PageTransition>
-            <div className="bg-black min-h-screen relative overflow-hidden">
+            <div className="min-h-screen bg-black text-gray-100 font-sans relative overflow-hidden">
                 {/* Background Animation */}
                 <Background />
 
-                {/* Main Content */}
+                {/* Main content */}
                 <motion.div
-                    className="relative z-10 max-w-screen-xl mx-auto px-6 md:px-12 py-32"
+                    className="relative z-10 max-w-4xl mx-auto px-6 py-12"
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
                 >
-                    {/* About Me Section */}
-                    <motion.section variants={itemVariants} className="mb-20">
-                        <h2 className="text-3xl font-bold text-white mb-6">About me</h2>
-                        <p className="text-gray-400 leading-relaxed text-sm max-w-3xl">
-                            A sophisticated e-Commerce platform designed to offer a premium shopping experience for luxury watches. It features a clean, modern interface with high-quality product images and detailed descriptions. Built with React.js, a sophisticated e-Commerce platform designed to offer a premium shopping experience. It features a clean, modern interface with high-quality product images and detailed descriptions. It allows users to browse, search, and filter watches by various criteria. It includes features like product reviews, an intuitive shopping cart, and seamless category navigation.
-                        </p>
+                    {/* About Section */}
+                    <motion.section variants={itemVariants} className="mb-16 mt-30">
+                        <div className="flex flex-col md:flex-row gap-12 items-start">
+                            {/* Text content */}
+                            <div className="flex-1">
+                                <h1 className="text-4xl font-bold mb-4 text-white">About me</h1>
+                                <p className="text-gray-400 leading-relaxed text-sm">
+                                    A sophisticated e-commerce platform designed to offer a premium shopping experience for luxury perfumes.
+                                    It includes elegant product pages, user reviews, an interactive wishlist feature, an optimized checkout
+                                    process, an advanced recommendation engine, an email marketing platform designed to offer a premium
+                                    shopping experience for luxury perfumes. It includes elegant product pages, user reviews, an interactive
+                                    wishlist feature, and more.
+                                </p>
+                            </div>
+                        </div>
                     </motion.section>
 
                     {/* Skills Section */}
-                    <motion.section variants={itemVariants} className="mb-20">
-                        <h2 className="text-3xl font-bold text-white mb-8">Skills</h2>
-                        <div className="grid md:grid-cols-2 gap-x-32 gap-y-2">
-                            <ul className="space-y-2">
-                                {skills.left.map((skill, index) => (
-                                    <li key={index} className="text-gray-400 text-sm flex items-start">
-                                        <span className="text-white mr-2">•</span>
-                                        {skill}
-                                    </li>
-                                ))}
-                            </ul>
-                            <ul className="space-y-2">
-                                {skills.right.map((skill, index) => (
-                                    <li key={index} className="text-gray-400 text-sm flex items-start">
-                                        <span className="text-white mr-2">•</span>
-                                        {skill}
-                                    </li>
-                                ))}
-                            </ul>
+                    <motion.section variants={itemVariants} className="mb-16">
+                        <h2 className="text-2xl font-bold mb-6 text-white">Skills</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <ul className="space-y-2 text-sm text-gray-400">
+                                    {skills.left.map((skill, index) => (
+                                        <li key={index} className="flex items-start">
+                                            <span className="mr-3">•</span>
+                                            <span>{skill}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div>
+                                <ul className="space-y-2 text-sm text-gray-400">
+                                    {skills.right.map((skill, index) => (
+                                        <li key={index} className="flex items-start">
+                                            <span className="mr-3">•</span>
+                                            <span>{skill}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
                         </div>
                     </motion.section>
 
                     {/* Professional Experience Section */}
-                    <motion.section variants={itemVariants} className="mb-20">
-                        <h2 className="text-3xl font-bold text-white mb-6">Professional Experience</h2>
-                        <div className="space-y-6 text-gray-400 text-sm leading-relaxed max-w-3xl">
-                            <p>
-                                As a freelance Fullstack Developer, I have been working with a client providing expertise in both frontend and backend development. I am experienced in building full-fledged web applications with technologies like React, Next.js, Node.js, Express, and more.
-                            </p>
-                            <p>
-                                My work involves not only developing feature-rich and responsive user interfaces but also building backend APIs, server-side logic, and managing deployments. I am also experienced in database design and management using MongoDB and MySQL.
-                            </p>
-                            <p>
-                                I enjoy taking on different roles, offering flexible support to meet the unique needs of each project.
-                            </p>
+                    <motion.section variants={itemVariants} className="mb-16">
+                        <h2 className="text-2xl font-bold mb-6 text-white">Professional Experience</h2>
+                        <div className="space-y-6">
+                            <div>
+                                <h3 className="text-lg font-semibold text-white mb-2">Freelance Web Developer</h3>
+                                <p className="text-gray-400 text-sm leading-relaxed">
+                                    As a Freelance Web Developer, I have been working on a client-providing web solutions and full-fledged
+                                    web applications for various projects. I have hands-on experience with various platforms.
+                                </p>
+                            </div>
+                            <div>
+                                <p className="text-gray-400 text-sm leading-relaxed">
+                                    My work involves not only developing feature-rich and responsive web interfaces but also considering
+                                    best practices for SEO, performance, and accessibility. I have a broad range of experience and also
+                                    specialize in designing and developing hosting platforms and maintaining applications in production.
+                                </p>
+                            </div>
+                            <div>
+                                <p className="text-gray-400 text-sm leading-relaxed">
+                                    Over the years, I've developed experience in different roles, offering flexible support to meet the
+                                    unique needs of each project.
+                                </p>
+                            </div>
                         </div>
                     </motion.section>
 
                     {/* Education Section */}
-                    <motion.section variants={itemVariants} className="mb-20">
-                        <h2 className="text-3xl font-bold text-white mb-6">Education</h2>
-                        <div className="text-gray-400 text-sm leading-relaxed">
-                            <p className="mb-1">Government College of Engineering, Erode, Tamil Nadu</p>
-                            <p>B. Tech in Information Technology (2022 - Present, Pre-final Year)</p>
+                    <motion.section variants={itemVariants} className="mb-16">
+                        <h2 className="text-2xl font-bold mb-6 text-white">Education</h2>
+                        <div className="text-gray-400 text-sm">
+                            <p className="mb-2">
+                                <span className="text-white font-semibold">Government College of Engineering, Erode, Tamil Nadu</span>
+                            </p>
+                            <p>B.Tech in Information Technology (2022 - Presently In the final Year)</p>
                         </div>
                     </motion.section>
 
                     {/* Hobbies Section */}
-                    <motion.section variants={itemVariants} className="mb-20">
-                        <h2 className="text-3xl font-bold text-white mb-6">Hobbies</h2>
-                        <ul className="space-y-2 text-gray-400 text-sm">
+                    <motion.section variants={itemVariants} className="mb-16">
+                        <h2 className="text-2xl font-bold mb-6 text-white">Hobbies</h2>
+                        <ul className="space-y-2 text-sm text-gray-400">
                             <li className="flex items-start">
-                                <span className="text-white mr-2">•</span>
-                                Playing cricket
+                                <span className="mr-3">•</span>
+                                <span>Exploring new technologies</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-white mr-2">•</span>
-                                Reading tech blogs and books
+                                <span className="mr-3">•</span>
+                                <span>Reading tech blogs and books</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-white mr-2">•</span>
-                                Working on and building outdoor activities
+                                <span className="mr-3">•</span>
+                                <span>Working out and other outdoor activities</span>
                             </li>
                         </ul>
                     </motion.section>
                 </motion.div>
 
-                <Footer />
+
             </div>
         </PageTransition>
     );

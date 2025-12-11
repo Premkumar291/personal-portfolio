@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
 import PageTransition from '../components/PageTransition';
@@ -6,6 +6,11 @@ import { Background } from '../components/backgroundAnimation';
 import Footer from '../components/Footer';
 
 const ContactPage = () => {
+    // Scroll to top on mount
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -31,12 +36,12 @@ const ContactPage = () => {
 
     return (
         <PageTransition>
-            <div className="bg-black min-h-screen relative overflow-hidden">
+            <div className="bg-black min-h-screen relative overflow-hidden flex flex-col">
                 {/* Background Animation */}
                 <Background />
 
                 {/* Main Content */}
-                <div className="relative z-10 flex items-center justify-center min-h-screen px-6 py-32">
+                <div className="relative z-10 flex items-center justify-center flex-1 px-6 py-32">
                     <motion.div
                         className="w-full max-w-md"
                         variants={containerVariants}
@@ -111,7 +116,7 @@ const ContactPage = () => {
                     </motion.div>
                 </div>
 
-                <Footer />
+
             </div>
         </PageTransition>
     );

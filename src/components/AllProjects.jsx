@@ -113,7 +113,7 @@ const AllProjects = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
+            
         </div>
     );
 };

@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer"
 import Home from "./pages/Home";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
@@ -30,6 +31,7 @@ const App = () => {
       <div className="bg-black text-white font-sans">
         <Navbar />
         <AnimatedRoutes />
+        <Footer />
       </div>
     </Router>
   );
