@@ -58,11 +58,7 @@ const AboutPage = () => {
                             <div className="flex-1">
                                 <h1 className="text-4xl font-bold mb-4 text-white">About me</h1>
                                 <p className="text-gray-400 leading-relaxed text-sm">
-                                    A sophisticated e-commerce platform designed to offer a premium shopping experience for luxury perfumes.
-                                    It includes elegant product pages, user reviews, an interactive wishlist feature, an optimized checkout
-                                    process, an advanced recommendation engine, an email marketing platform designed to offer a premium
-                                    shopping experience for luxury perfumes. It includes elegant product pages, user reviews, an interactive
-                                    wishlist feature, and more.
+                                    Enthusiastic Full Stack Developer (MERN) with a strong foundation in web technologies. Passionate about building scalable and responsive applications with modern frameworks and tools.
                                 </p>
                             </div>
                         </div>
@@ -129,7 +125,7 @@ const AboutPage = () => {
                             <p className="mb-2">
                                 <span className="text-white font-semibold">Government College of Engineering, Erode, Tamil Nadu</span>
                             </p>
-                            <p>B.Tech in Information Technology (2022 - Presently In the final Year)</p>
+                            <p>B.Tech in Information Technology (2023 - Presently In the final Year)</p>
                         </div>
                     </motion.section>
 
@@ -143,7 +139,7 @@ const AboutPage = () => {
                             </li>
                             <li className="flex items-start">
                                 <span className="mr-3">•</span>
-                                <span>Reading tech blogs and books</span>
+                                <span>Playing Batmiton</span>
                             </li>
                             <li className="flex items-start">
                                 <span className="mr-3">•</span>
