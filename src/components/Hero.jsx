@@ -11,7 +11,7 @@ const Hero = () => {
 
     useEffect(() => {
         // Drop animation first, then switch to floating
-        const animateCapsule = async (controls, floatY, floatX, duration, delay = 0) => {
+        const animateCapsule = async (controls, floatY, floatX, duration, delay = 0, rotation = 0) => {
             // Wait for delay
             if (delay > 0) {
                 await new Promise(resolve => setTimeout(resolve, delay * 1000));
@@ -20,12 +20,14 @@ const Hero = () => {
             await controls.start({
                 y: 0,
                 opacity: 1,
+                rotate: rotation,
                 transition: { duration: 0.8, ease: "easeOut" }
             });
             // Start floating
             controls.start({
                 y: [0, floatY, 0],
                 x: [0, floatX, 0],
+                rotate: rotation,
                 transition: {
                     duration: duration,
                     repeat: Infinity,
@@ -34,11 +36,11 @@ const Hero = () => {
             });
         };
 
-        animateCapsule(controls1, -20, 15, 3, 0);
-        animateCapsule(controls2, 25, -20, 3.5, 0.15);
-        animateCapsule(controls3, 30, 10, 4, 0.3);
-        animateCapsule(controls4, -15, -25, 3.2, 0.45);
-        animateCapsule(controls5, 20, 18, 3.8, 0.6);
+        animateCapsule(controls1, -20, 15, 3, 0, 49.67);
+        animateCapsule(controls2, 25, -20, 3.5, 0.15, 27.56);
+        animateCapsule(controls3, 30, 10, 4, 0.3, -14.18);
+        animateCapsule(controls4, -15, -25, 3.2, 0.45, -23.94);
+        animateCapsule(controls5, 20, 18, 3.8, 0.6, -39.86);
     }, [controls1, controls2, controls3, controls4, controls5]);
 
     return (
