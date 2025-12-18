@@ -14,7 +14,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className="fixed w-full z-50 pt-8">
+        <nav className="fixed w-full z-50 pt-4 md:pt-8">
             <div className="max-w-7xl mx-auto px-6 flex justify-center items-center">
                 {/* Desktop Menu - Centered Pill Container */}
                 <div className="hidden md:flex items-center gap-1 bg-[#1a1a1d] rounded-full px-8 py-4 border border-gray-800/50">
@@ -71,7 +71,7 @@ const Navbar = () => {
                                 >
                                     {link.name}
                                     {/* Animated underline */}
-                                    
+
                                 </Link>
                             );
                         })}

@@ -60,7 +60,7 @@ const Hero = () => {
 
             {/* Bottom Right Capsule */}
             <motion.div
-                className="absolute w-[300px] h-[90px] left-[77%] top-[73%] rounded-[285px] z-30"
+                className="absolute w-[200px] h-[60px] md:w-[300px] md:h-[90px] left-[60%] md:left-[77%] top-[73%] rounded-[285px] z-30"
                 style={{
                     background: 'linear-gradient(90deg, rgba(132, 132, 140, 0.3) 6.9%, rgba(192, 192, 192, 0.6) 48.85%, rgba(132, 132, 140, 0.3) 84.2%)',
                     transform: 'rotate(27.56deg)'
@@ -71,12 +71,12 @@ const Hero = () => {
 
             {/* Bottom Left Capsule */}
             <motion.div
-                className="absolute w-[300px] h-[90px] rounded-[285px] z-30"
+                className="absolute w-[200px] h-[60px] md:w-[300px] md:h-[90px] rounded-[285px] z-30"
                 style={{
                     background: 'linear-gradient(90deg, rgba(132, 132, 140, 0.3) 6.9%, rgba(192, 192, 192, 0.6) 48.85%, rgba(132, 132, 140, 0.3) 84.2%)',
                     transform: 'rotate(-14.18deg)',
-                    left: '188px',
-                    top: '500px'
+                    left: '10%', // Changed from fixed px
+                    top: '65%'   // Changed from fixed px
                 }}
                 initial={{ y: -1000, opacity: 0 }}
                 animate={controls3}
@@ -112,17 +112,17 @@ const Hero = () => {
                     transition={{ duration: 0.8, delay: 0.8 }}
                 >
                     {/* Main Heading */}
-                    <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight whitespace-nowrap">
+                    <h1 className="text-4xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
                         Hi, I'm Premkumar P
                     </h1>
 
                     {/* Subheading - Monospace Style */}
-                    <h2 className="text-2xl md:text-3xl lg:text-4xl font-mono text-white mb-8 tracking-wider">
+                    <h2 className="text-xl md:text-3xl lg:text-4xl font-mono text-white mb-8 tracking-wider">
                         A Full Stack Developer
                     </h2>
 
                     {/* Description */}
-                    <p className="text-gray-400 text-lg md:text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed">
+                    <p className="text-gray-400 text-base md:text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed">
                         Enthusiastic Full Stack Developer (MERN) with a strong foundation in web technologies. Passionate about building scalable and responsive applications with modern frameworks and tools.
                     </p>
                 </motion.div>

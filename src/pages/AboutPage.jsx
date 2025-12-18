@@ -52,7 +52,7 @@ const AboutPage = () => {
                     animate="visible"
                 >
                     {/* About Section */}
-                    <motion.section variants={itemVariants} className="mb-16 mt-30">
+                    <motion.section variants={itemVariants} className="mb-16 mt-20 md:mt-30">
                         <div className="flex flex-col md:flex-row gap-12 items-start">
                             {/* Text content */}
                             <div className="flex-1">

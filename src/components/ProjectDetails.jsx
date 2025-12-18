@@ -39,7 +39,7 @@ const ProjectDetails = () => {
         <div className="bg-[#050505] min-h-screen relative overflow-hidden">
             <Background />
 
-            <div className="pt-32 pb-20 px-6 relative z-10">
+            <div className="pt-24 md:pt-32 pb-20 px-6 relative z-10">
                 <div className="max-w-4xl mx-auto">
                     {/* Back Button */}
                     <div className="mb-12">
@@ -215,7 +215,7 @@ const ProjectDetails = () => {
                 </div>
             </div>
 
-            
+
         </div>
     );
 };

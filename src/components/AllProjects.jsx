@@ -15,9 +15,9 @@ const AllProjects = () => {
         <div className="bg-[#050505] min-h-screen relative overflow-hidden">
             <Background />
 
-            <div className="pt-32 pb-20 px-6 relative z-10">
+            <div className="pt-24 md:pt-32 pb-20 px-6 relative z-10">
                 <div className="max-w-6xl mx-auto">
-                    
+
 
                     {/* Header */}
                     <div className="text-right mb-24">
@@ -113,7 +113,7 @@ const AllProjects = () => {
                     </div>
                 </div>
             </div>
-            
+
         </div>
     );
 };
