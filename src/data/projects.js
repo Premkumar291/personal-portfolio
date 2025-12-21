@@ -56,7 +56,7 @@ export const projects = [
         title: 'Rikash - Mackup',
         description: 'A responsive beauty makeup website with interactive product showcases and service listings. Designed an engaging user interface with modern aesthetics and smooth animations. Implemented a comprehensive contact system with appointment booking functionality. Optimized the website for performance and cross-device compatibility.',
         image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2000&auto=format&fit=crop',
-        demoLink: '',
+        demoLink: 'https://www.rikasmakeover.com/',
         githubLink: '#',
         challenges: [
             'Creating an engaging and visually appealing interface for beauty products',
