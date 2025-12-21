@@ -53,7 +53,7 @@ const Footer = () => {
     const socialLinks = [
         {
             name: 'LinkedIn',
-            url: 'https://linkedin.com/in/yourprofile',
+            url: 'https://www.linkedin.com/in/premkumar-p-8247aa314',
             icon: LinkedInIcon
         },
         {
