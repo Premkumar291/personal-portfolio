@@ -4,6 +4,16 @@ import weatherAppImage2 from '../assets/Projects/WeatherApp/weatherApp2.png';
 import weatherAppImage3 from '../assets/Projects/WeatherApp/weatherApp3.png';
 import weatherAppImage4 from '../assets/Projects/WeatherApp/weatherApp4.png';
 
+//Rikash Mackover
+import Rikas1 from '../assets/Projects/Rikash-Mackup/Rikas1.png'
+import Rikas2 from '../assets/Projects/Rikash-Mackup/Rikas2.png'
+import Rikas3 from '../assets/Projects/Rikash-Mackup/Rikas3.png'
+import Rikas4 from '../assets/Projects/Rikash-Mackup/Rikas4.png'
+import Rikas5 from '../assets/Projects/Rikash-Mackup/Rikas5.png'
+import Rikas6 from '../assets/Projects/Rikash-Mackup/Rikas6.png'
+import Rikas7 from '../assets/Projects/Rikash-Mackup/Rikas7.png'
+import Rikas8 from '../assets/Projects/Rikash-Mackup/Rikas8.png'
+
 
 
 
@@ -55,9 +65,9 @@ export const projects = [
         id: 'rikash-makeup',
         title: 'Rikash - Mackup',
         description: 'A responsive beauty makeup website with interactive product showcases and service listings. Designed an engaging user interface with modern aesthetics and smooth animations. Implemented a comprehensive contact system with appointment booking functionality. Optimized the website for performance and cross-device compatibility.',
-        image: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=2000&auto=format&fit=crop',
+        image: Rikas1,
         demoLink: 'https://www.rikasmakeover.com/',
-        githubLink: '#',
+        githubLink: '',
         challenges: [
             'Creating an engaging and visually appealing interface for beauty products',
             'Implementing smooth animations without compromising performance',
@@ -80,17 +90,17 @@ export const projects = [
         ],
         technologies: ['React.js', 'TailwindCSS'],
         screenshots: [
-            'https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1583241800698-c318e4c2e6c1?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1526045478516-99145907023c?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1515688594390-b649af70d282?q=80&w=800&auto=format&fit=crop'
+            Rikas1,
+            Rikas2,
+            Rikas3,
+            Rikas4,
+            Rikas5,
+            Rikas6,
+            Rikas7,
+            Rikas8
         ],
         status: {
-            deployed: false,
+            deployed: true,
             github: true
         }
     },

@@ -91,13 +91,22 @@ const AllProjects = () => {
                                                 </div>
                                             )}
 
-                                            <a
-                                                href={project.githubLink}
-                                                className="flex items-center gap-2 px-6 py-2 border border-teal-900/50 text-teal-400 text-sm hover:bg-teal-900/10 transition-colors rounded-sm tracking-wider uppercase font-medium"
-                                            >
-                                                <Github size={16} />
-                                                Github
-                                            </a>
+                                            {project.githubLink && project.githubLink !== '#' ? (
+                                                <a
+                                                    href={project.githubLink}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="flex items-center gap-2 px-6 py-2 border border-teal-900/50 text-teal-400 text-sm hover:bg-teal-900/10 transition-colors rounded-sm tracking-wider uppercase font-medium"
+                                                >
+                                                    <Github size={16} />
+                                                    Github
+                                                </a>
+                                            ) : (
+                                                <div className="flex items-center gap-2 px-6 py-2 border border-red-900/50 text-red-500 text-sm bg-red-900/5 rounded-sm tracking-wider uppercase font-medium cursor-not-allowed">
+                                                    <Github size={16} />
+                                                    Unavailable
+                                                </div>
+                                            )}
 
                                             <Link
                                                 to={`/projects/${project.id}`}
