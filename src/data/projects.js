@@ -18,13 +18,14 @@ import Rikas8 from '../assets/Projects/Rikash-Mackup/Rikas8.png'
 
 
 export const projects = [
+    //Acadex
     {
         id: 'acadex-academic-index',
         title: 'ACADEX –An Academic Index',
         description: 'A full-stack MERN application for automated university result processing, featuring secure faculty authentication, intelligent PDF-to-JSON conversion with smart student search capabilities, automated Excel report generation in institutional format, and comprehensive admin analytics dashboards delivering real-time subject-wise performance insights.',
         image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2000&auto=format&fit=crop',
         demoLink: '',
-        githubLink: '#',
+        githubLink: 'https://github.com/Premkumar291/Acadex.git',
         challenges: [
             'Processing complex PDF documents with varying formats and extracting structured data accurately',
             'Implementing intelligent search algorithms to handle partial student information queries',
@@ -61,6 +62,7 @@ export const projects = [
             github: true
         }
     },
+    //Rikash makeover
     {
         id: 'rikash-makeup',
         title: 'Rikash - Mackup',
@@ -101,9 +103,10 @@ export const projects = [
         ],
         status: {
             deployed: true,
-            github: true
+            github: false
         }
     },
+    //Weather App
     {
         id: 'weather-app',
         title: 'Weather App',
@@ -141,13 +144,15 @@ export const projects = [
             github: true
         }
     },
+
+    //DEMO Projects
     {
         id: 'ecommerce-platform',
         title: 'E-Commerce Platform',
         description: 'A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include real-time inventory management, secure payment gateway integration, and a comprehensive admin dashboard for order processing.',
         image: 'https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=2000&auto=format&fit=crop',
         demoLink: '',
-        githubLink: '#',
+        githubLink: '',
         challenges: [
             'Implementing secure payment processing with multiple payment gateways',
             'Managing real-time inventory across multiple warehouses',
@@ -181,7 +186,7 @@ export const projects = [
         ],
         status: {
             deployed: false,
-            github: true
+            github: false
         }
     },
     {
@@ -190,7 +195,7 @@ export const projects = [
         description: 'A collaborative task management tool tailored for remote teams. Implements real-time updates using Socket.io, drag-and-drop task organization, and detailed productivity analytics.',
         image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=2000&auto=format&fit=crop',
         demoLink: '',
-        githubLink: '#',
+        githubLink: '',
         challenges: [
             'Implementing real-time collaboration without conflicts',
             'Creating intuitive drag-and-drop interface',
@@ -224,7 +229,7 @@ export const projects = [
         ],
         status: {
             deployed: false,
-            github: true
+            github: false
         }
     },
     {
@@ -233,7 +238,7 @@ export const projects = [
         description: 'A mobile-first health tracking application designed to monitor daily activities and vital signs. Integrates with wearable devices to provide personalized health insights and visualization of progress over time.',
         image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2000&auto=format&fit=crop',
         demoLink: '',
-        githubLink: '#',
+        githubLink: '',
         challenges: [
             'Integrating with multiple wearable device APIs',
             'Processing and visualizing large amounts of health data',
@@ -267,7 +272,7 @@ export const projects = [
         ],
         status: {
             deployed: false,
-            github: true
+            github: false
         }
     }
 ];
