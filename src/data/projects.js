@@ -14,6 +14,22 @@ import Rikas6 from '../assets/Projects/Rikash-Mackup/Rikas6.png'
 import Rikas7 from '../assets/Projects/Rikash-Mackup/Rikas7.png'
 import Rikas8 from '../assets/Projects/Rikash-Mackup/Rikas8.png'
 
+//Acadex
+import acadex1 from "../assets/Projects/Acadex/acadex1.png"
+import acadex2 from "../assets/Projects/Acadex/acadex2.png"
+import acadex3 from "../assets/Projects/Acadex/acadex3.png"
+import acadex4 from "../assets/Projects/Acadex/acadex4.png"
+import acadex5 from "../assets/Projects/Acadex/acadex5.png"
+import acadex6 from "../assets/Projects/Acadex/acadex6.png"
+import acadex7 from "../assets/Projects/Acadex/acadex7.png"
+import acadex8 from "../assets/Projects/Acadex/acadex8.png"
+import acadex9 from "../assets/Projects/Acadex/acadex9.png"
+import acadex10 from "../assets/Projects/Acadex/acadex10.png"
+import acadex11 from "../assets/Projects/Acadex/acadex11.png"
+import acadex12 from "../assets/Projects/Acadex/acadex12.png"
+import acadex13 from "../assets/Projects/Acadex/acadex13.png"
+import acadex14 from "../assets/Projects/Acadex/acadex14.png"
+
 
 
 
@@ -23,7 +39,7 @@ export const projects = [
         id: 'acadex-academic-index',
         title: 'ACADEX –An Academic Index',
         description: 'A full-stack MERN application for automated university result processing, featuring secure faculty authentication, intelligent PDF-to-JSON conversion with smart student search capabilities, automated Excel report generation in institutional format, and comprehensive admin analytics dashboards delivering real-time subject-wise performance insights.',
-        image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2000&auto=format&fit=crop',
+        image: acadex14,
         demoLink: '',
         githubLink: 'https://github.com/Premkumar291/Acadex.git',
         challenges: [
@@ -46,17 +62,8 @@ export const projects = [
             'Real-time analytics dashboards with subject-wise insights',
             'Comprehensive admin panel for system management'
         ],
-        technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'PDF.js'],
-        screenshots: [
-            'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=800&auto=format&fit=crop'
-        ],
+        technologies: ['React.js', 'Node.js', 'MongoDB', 'Express', 'PDF.js','pdfplumber','excel_js'],
+        screenshots: [acadex1, acadex2, acadex3, acadex4, acadex5, acadex6, acadex7, acadex8, acadex9, acadex10, acadex11, acadex12, acadex13, acadex14],
         status: {
             deployed: false,
             github: true
@@ -145,13 +152,13 @@ export const projects = [
         }
     },
 
-    //DEMO Projects
+   
     {
-        id: 'ecommerce-platform',
-        title: 'E-Commerce Platform',
+        id: 'tablify-extractor',
+        title: 'Tablify',
         description: 'A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include real-time inventory management, secure payment gateway integration, and a comprehensive admin dashboard for order processing.',
         image: 'https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=2000&auto=format&fit=crop',
-        demoLink: '',
+        demoLink: 'https://tablify-extractpdf.vercel.app/login',
         githubLink: '',
         challenges: [
             'Implementing secure payment processing with multiple payment gateways',
@@ -189,6 +196,7 @@ export const projects = [
             github: false
         }
     },
+     //DEMO Projects
     {
         id: 'task-management-system',
         title: 'Task Management System',

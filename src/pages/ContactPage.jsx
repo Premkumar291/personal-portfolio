@@ -111,6 +111,7 @@ const ContactPage = () => {
                                     <Send size={18} />
                                     Send
                                 </motion.button>
+                
                             </motion.div>
                         </form>
                     </motion.div>
