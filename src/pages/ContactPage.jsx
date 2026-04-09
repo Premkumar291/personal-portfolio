@@ -5,34 +5,34 @@ import PageTransition from '../components/PageTransition';
 import { Background } from '../components/backgroundAnimation';
 import Footer from '../components/Footer';
 
-const ContactPage = () => {
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.2
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+            ease: 'easeOut'
+        }
+    }
+};
+
+const ContactPage = React.memo(() => {
     // Scroll to top on mount
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.15,
-                delayChildren: 0.2
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5,
-                ease: 'easeOut'
-            }
-        }
-    };
 
     return (
         <PageTransition>
@@ -111,7 +111,7 @@ const ContactPage = () => {
                                     <Send size={18} />
                                     Send
                                 </motion.button>
-                
+
                             </motion.div>
                         </form>
                     </motion.div>
@@ -121,6 +121,6 @@ const ContactPage = () => {
             </div>
         </PageTransition>
     );
-};
+});
 
 export default ContactPage;

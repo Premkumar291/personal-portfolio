@@ -59,29 +59,31 @@ const zigzagLines = [
     }
 ];
 
-export const Background = () => {
+// Self-contained styles for the animation
+const backgroundStyles = `
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 6000;
+    }
+    100% {
+      stroke-dashoffset: -6000;
+    }
+  }
+  .line-trace {
+    stroke-dasharray: 400 6000;
+    stroke-dashoffset: 6000;
+    animation-name: dash;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+`;
+
+export const Background = React.memo(() => {
     const paths = useMemo(() => zigzagLines, []);
 
     return (
         <div className="absolute inset-0 z-0 bg-black pointer-events-none overflow-hidden">
-            {/* Self-contained styles for the animation */}
-            <style>{`
-        @keyframes dash {
-          0% {
-            stroke-dashoffset: 6000;
-          }
-          100% {
-            stroke-dashoffset: -6000;
-          }
-        }
-        .line-trace {
-          stroke-dasharray: 400 6000;
-          stroke-dashoffset: 6000;
-          animation-name: dash;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
-        }
-      `}</style>
+            <style>{backgroundStyles}</style>
 
             <svg
                 className="w-full h-full opacity-80"
@@ -134,4 +136,4 @@ export const Background = () => {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)]"></div>
         </div>
     );
-};
+});

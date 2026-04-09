@@ -30,6 +30,13 @@ import acadex12 from "../assets/Projects/Acadex/acadex12.png"
 import acadex13 from "../assets/Projects/Acadex/acadex13.png"
 import acadex14 from "../assets/Projects/Acadex/acadex14.png"
 
+//Tablify
+import tablify1 from "../assets/Projects/Tablify/tablify1.png"
+import tablify2 from "../assets/Projects/Tablify/tablify2.png"
+import tablify3 from "../assets/Projects/Tablify/tablify3.png"
+import tablify4 from "../assets/Projects/Tablify/tablify4.png"
+import tablify5 from "../assets/Projects/Tablify/tablify5.png"
+
 
 
 
@@ -151,52 +158,45 @@ export const projects = [
             github: true
         }
     },
-
-   
+   //Tablify
     {
         id: 'tablify-extractor',
         title: 'Tablify',
-        description: 'A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include real-time inventory management, secure payment gateway integration, and a comprehensive admin dashboard for order processing.',
-        image: 'https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=2000&auto=format&fit=crop',
-        demoLink: 'https://tablify-extractpdf.vercel.app/login',
-        githubLink: '',
+        description: 'A professional full-stack SaaS application that intelligently extracts tables from PDF documents and converts them into structured JSON, CSV, Excel, and Text formats. Designed for businesses and developers to automate complex data extraction workflows with high precision.',
+        image: tablify1,
+        demoLink: 'https://tablify-extractpdf.vercel.app/',
+        githubLink: 'https://github.com/Premkumar291/Tablify.git',
         challenges: [
-            'Implementing secure payment processing with multiple payment gateways',
-            'Managing real-time inventory across multiple warehouses',
-            'Building scalable architecture to handle high traffic',
-            'Creating intuitive admin dashboard for complex operations'
+            'Architecting an intelligent Python-based extraction engine to detect complex table structures in PDFs',
+            'Implementing a secure dual-authentication system using both JWT tokens and API keys',
+            'Managing high-volume file processing and real-time conversion across multiple output formats',
+            'Building a scalable usage analytics system to track API metrics and data processing logs'
         ],
         solutions: [
-            'Integrated Stripe and PayPal with comprehensive security measures',
-            'Developed real-time inventory sync system with conflict resolution',
-            'Implemented microservices architecture with load balancing',
-            'Created modular admin dashboard with role-based permissions'
+            'Integrated high-performance Python processing scripts for reliable document data extraction',
+            'Developed a robust API key management system with built-in rate limiting and throttling',
+            'Created a modular backend architecture for independent handling of auth, conversion, and admin functions',
+            'Designed a responsive, high-performance dashboard using Framer Motion for enhanced user experience'
         ],
         features: [
-            'Product catalog with advanced filtering and search',
-            'Shopping cart with real-time price updates',
-            'Secure checkout with multiple payment options',
-            'Real-time inventory management',
-            'Order tracking and notifications',
-            'Comprehensive admin dashboard'
+            'Intelligent PDF Table Extraction (Python-powered)',
+            'Multiple Export Formats: JSON, CSV, Excel, Text',
+            'Secure API Access with up to 3 keys per user',
+            'Real-time Usage Analytics & API Metrics Tracking',
+            'Advanced JWT Auth with Token Refresh mechanism',
+            'Built-in Rate Limiting to prevent API abuse',
+            'Comprehensive Admin Panel for system-wide management',
+            'Modern Responsive UI with Lucide React & Tailwind'
         ],
-        technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Stripe'],
-        screenshots: [
-            'https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1472851294608-062f824d29cc?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1556742111-a301076d9d18?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=800&auto=format&fit=crop',
-            'https://images.unsplash.com/photo-1556742049-9f7e0e0e9f7e?q=80&w=800&auto=format&fit=crop'
-        ],
+        technologies: ['React 19', 'Tailwind CSS', 'Node.js', 'MongoDB', 'Python', 'Express', 'JWT'],
+        screenshots: [tablify1, tablify2, tablify3, tablify4, tablify5],
         status: {
-            deployed: false,
-            github: false
+            deployed: true,
+            github: true
         }
     },
-     //DEMO Projects
+
+     //Colab-Text Editor
     {
         id: 'task-management-system',
         title: 'Task Management System',
@@ -240,6 +240,7 @@ export const projects = [
             github: false
         }
     },
+    //Gusto - 2026
     {
         id: 'health-tracking-app',
         title: 'Health Tracking App',
@@ -281,6 +282,43 @@ export const projects = [
         status: {
             deployed: false,
             github: false
+        }
+    },
+    //FOSS-GCEE
+    {
+        id: 'foss-gcee',
+        title: 'FOSS-GCEE',
+        description: 'A comprehensive platform for the Free and Open Source Software (FOSS) community at Government College of Engineering, Erode. Built to streamline community interactions, manage events, and provide a centralized hub for student resources and technical collaboration.',
+        image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2000&auto=format&fit=crop',
+        demoLink: '',
+        githubLink: 'https://github.com/fossgcee/fossgcee-website',
+        challenges: [
+            'Designing a scalable administrative routing system to manage diverse community roles and permissions',
+            'Implementing high-performance API endpoints for real-time resource and user management',
+            'Developing a secure and intuitive dashboard for community administrators and moderators'
+        ],
+        solutions: [
+            'Architected a robust backend using Node.js and Express with modular controllers for clear separation of concerns',
+            'Optimized MongoDB schemas and queries to ensure low-latency data retrieval for community events and logs',
+            'Implemented a comprehensive JWT-based authentication flow with granular role-based access control (RBAC)'
+        ],
+        features: [
+            'Centralized Resource Hub for technical documentation and student guides',
+            'Administrative Dashboard for community management and routing',
+            'Event Management System with tracking and registrations',
+            'Secure API-driven architecture with JWT implementation',
+            'Responsive Community Hub for cross-device collaboration'
+        ],
+        technologies: ['Node.js', 'Express', 'MongoDB', 'React', 'Tailwind CSS'],
+        screenshots: [
+            'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop',
+            'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=800&auto=format&fit=crop'
+        ],
+        status: {
+            deployed: true,
+            github: true
         }
     }
 ];

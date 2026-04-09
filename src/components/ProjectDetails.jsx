@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { projects } from '../data/projects';
 import Footer from './Footer';
 import { ArrowLeft, Github, Globe, CheckCircle2, XCircle } from 'lucide-react';
 import { Background } from './backgroundAnimation';
 
-const ProjectDetails = () => {
+const ProjectDetails = React.memo(() => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const project = projects.find(p => p.id === id);
+    const project = useMemo(() => projects.find(p => p.id === id), [id]);
 
     // Scroll to top on mount
     useEffect(() => {
@@ -69,9 +69,9 @@ const ProjectDetails = () => {
                                 Challenges
                             </h2>
                             <div className="space-y-4">
-                                {project.challenges.map((challenge, index) => (
+                                {project.challenges.map((challenge) => (
                                     <div
-                                        key={index}
+                                        key={challenge}
                                         className="flex gap-4 text-gray-400 leading-relaxed"
                                     >
                                         <span className="text-gray-600 mt-1">•</span>
@@ -89,9 +89,9 @@ const ProjectDetails = () => {
                                 Solutions
                             </h2>
                             <div className="space-y-4">
-                                {project.solutions.map((solution, index) => (
+                                {project.solutions.map((solution) => (
                                     <div
-                                        key={index}
+                                        key={solution}
                                         className="flex gap-4 text-gray-400 leading-relaxed"
                                     >
                                         <span className="text-gray-600 mt-1">•</span>
@@ -109,9 +109,9 @@ const ProjectDetails = () => {
                                 Features
                             </h2>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                {project.features.map((feature, index) => (
+                                {project.features.map((feature) => (
                                     <div
-                                        key={index}
+                                        key={feature}
                                         className="flex gap-3 text-gray-400 leading-relaxed"
                                     >
                                         <span className="text-green-500 mt-1">✓</span>
@@ -129,9 +129,9 @@ const ProjectDetails = () => {
                                 Technologies / Stack
                             </h2>
                             <div className="flex flex-wrap gap-3">
-                                {project.technologies.map((tech, index) => (
+                                {project.technologies.map((tech) => (
                                     <span
-                                        key={index}
+                                        key={tech}
                                         className="px-4 py-2 bg-white/5 border border-gray-800 text-gray-300 text-sm rounded hover:bg-white/10 transition-colors"
                                     >
                                         {tech}
@@ -199,7 +199,7 @@ const ProjectDetails = () => {
                             <div className="space-y-6">
                                 {project.screenshots.map((screenshot, index) => (
                                     <div
-                                        key={index}
+                                        key={screenshot}
                                         className="w-full rounded-lg overflow-hidden border border-gray-800 hover:border-gray-600 transition-colors group cursor-pointer"
                                     >
                                         <img
@@ -218,6 +218,6 @@ const ProjectDetails = () => {
 
         </div>
     );
-};
+});
 
 export default ProjectDetails;

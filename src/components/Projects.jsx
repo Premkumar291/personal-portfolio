@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 
-const Projects = () => {
+const Projects = React.memo(() => {
     return (
         <section id="projects" className="py-20 bg-black">
             <div className="max-w-7xl mx-auto px-6">
@@ -13,9 +13,9 @@ const Projects = () => {
 
                 {/* Project Cards Grid*/}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                    {projects.slice(0, 3).map((project, index) => (
+                    {projects.slice(0, 3).map((project) => (
                         <div
-                            key={index}
+                            key={project.id}
                             className="bg-[#0a0a0a] border border-gray-700/50 rounded-lg overflow-hidden hover:border-gray-600 transition-all shadow-xl h-full flex flex-col"
                         >
                             {/* Project Image */}
@@ -63,6 +63,6 @@ const Projects = () => {
             </div>
         </section>
     );
-};
+});
 
 export default Projects;

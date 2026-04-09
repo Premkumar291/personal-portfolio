@@ -5,7 +5,7 @@ import Footer from './Footer';
 import { Github, Globe, AlertCircle, ArrowLeft } from 'lucide-react';
 import { Background } from './backgroundAnimation';
 
-const AllProjects = () => {
+const AllProjects = React.memo(() => {
     // Scroll to top on mount
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -34,9 +34,9 @@ const AllProjects = () => {
 
                     {/* Projects List */}
                     <div className="space-y-24">
-                        {projects.map((project, index) => (
+                        {projects.map((project) => (
                             <div
-                                key={index}
+                                key={project.id}
                                 className="relative border border-gray-800 bg-black/40 backdrop-blur-sm p-6 md:p-10 rounded-lg group hover:border-gray-600 transition-colors"
                             >
                                 {/* Center Title Overlay similar to design */}
@@ -125,6 +125,6 @@ const AllProjects = () => {
 
         </div>
     );
-};
+});
 
 export default AllProjects;

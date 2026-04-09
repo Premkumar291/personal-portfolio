@@ -2,7 +2,7 @@ import React from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useEffect } from 'react';
 
-const Hero = () => {
+const Hero = React.memo(() => {
     const controls1 = useAnimation();
     const controls2 = useAnimation();
     const controls3 = useAnimation();
@@ -129,6 +129,6 @@ const Hero = () => {
             </div>
         </section>
     );
-};
+});
 
 export default Hero;

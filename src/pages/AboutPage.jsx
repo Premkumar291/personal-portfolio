@@ -4,39 +4,39 @@ import PageTransition from '../components/PageTransition';
 import { Background } from '../components/backgroundAnimation';
 import Footer from '../components/Footer';
 
-const AboutPage = () => {
+const skills = {
+    left: ['JavaScript', 'React.js ', 'CSS - Tailwind CSS', 'CSS - Bootstrap'],
+    right: ['Node.js - Express', 'MySQL - MongoDB', 'Git - Github']
+};
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.2,
+            delayChildren: 0.1
+        }
+    }
+};
+
+const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.6,
+            ease: 'easeOut'
+        }
+    }
+};
+
+const AboutPage = React.memo(() => {
     // Scroll to top on mount
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
-
-    const skills = {
-        left: ['JavaScript', 'React.js ', 'CSS - Tailwind CSS', 'CSS - Bootstrap'],
-        right: ['Node.js - Express', 'MySQL - MongoDB', 'Git - Github']
-    };
-
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.1
-            }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.6,
-                ease: 'easeOut'
-            }
-        }
-    };
 
     return (
         <PageTransition>
@@ -70,8 +70,8 @@ const AboutPage = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div>
                                 <ul className="space-y-2 text-sm text-gray-400">
-                                    {skills.left.map((skill, index) => (
-                                        <li key={index} className="flex items-start">
+                                    {skills.left.map((skill) => (
+                                        <li key={skill} className="flex items-start">
                                             <span className="mr-3">•</span>
                                             <span>{skill}</span>
                                         </li>
@@ -80,8 +80,8 @@ const AboutPage = () => {
                             </div>
                             <div>
                                 <ul className="space-y-2 text-sm text-gray-400">
-                                    {skills.right.map((skill, index) => (
-                                        <li key={index} className="flex items-start">
+                                    {skills.right.map((skill) => (
+                                        <li key={skill} className="flex items-start">
                                             <span className="mr-3">•</span>
                                             <span>{skill}</span>
                                         </li>
@@ -153,6 +153,6 @@ const AboutPage = () => {
             </div>
         </PageTransition>
     );
-};
+});
 
 export default AboutPage;

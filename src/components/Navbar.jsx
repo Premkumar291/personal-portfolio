@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar = React.memo(() => {
     const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
 
-    const navLinks = [
+    const navLinks = useMemo(() => [
         { name: 'Home', href: '/', isRoute: true },
         { name: 'Projects', href: '/projects', isRoute: true },
         { name: 'Contact', href: '/contact', isRoute: true },
         { name: 'About', href: '/about', isRoute: true }
-    ];
+    ], []);
 
     return (
         <nav className="fixed w-full z-50 pt-4 md:pt-8">
@@ -80,6 +80,6 @@ const Navbar = () => {
             )}
         </nav>
     );
-};
+});
 
 export default Navbar;

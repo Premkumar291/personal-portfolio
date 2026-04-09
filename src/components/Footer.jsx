@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 
 // Icon Components
 const EmailIcon = () => (
@@ -32,9 +32,9 @@ const LeetCodeIcon = () => (
     </svg>
 );
 
-const Footer = () => {
+const Footer = React.memo(() => {
     // Contact Information Array
-    const contactInfo = [
+    const contactInfo = useMemo(() => [
         {
             type: 'email',
             label: 'premkumar.29105@gmail.com',
@@ -47,10 +47,10 @@ const Footer = () => {
             href: 'tel:+916382057380',
             icon: PhoneIcon
         }
-    ];
+    ], []);
 
     // Social Links Array
-    const socialLinks = [
+    const socialLinks = useMemo(() => [
         {
             name: 'LinkedIn',
             url: 'https://www.linkedin.com/in/premkumar-p-8247aa314',
@@ -66,7 +66,7 @@ const Footer = () => {
             url: 'https://leetcode.com/u/Prem291/',
             icon: LeetCodeIcon
         }
-    ];
+    ], []);
 
     return (
         <footer className="relative z-10 bg-[#0f0f11] border-t border-gray-800 py-12">
@@ -86,11 +86,11 @@ const Footer = () => {
                     {/* Contact Information */}
                     <div className="flex flex-col gap-3 text-sm text-gray-400 text-center lg:text-left items-center lg:items-start">
                         <h3 className="text-white font-semibold mb-1">Contact</h3>
-                        {contactInfo.map((contact, index) => {
+                        {contactInfo.map((contact) => {
                             const IconComponent = contact.icon;
                             return (
                                 <a
-                                    key={index}
+                                    key={contact.type}
                                     href={contact.href}
                                     className="hover:text-white transition-colors flex items-center gap-2"
                                 >
@@ -105,11 +105,11 @@ const Footer = () => {
                     <div className="flex flex-col gap-3 items-center lg:items-start">
                         <h3 className="text-white font-semibold text-sm mb-1">Connect</h3>
                         <div className="flex gap-4">
-                            {socialLinks.map((social, index) => {
+                            {socialLinks.map((social) => {
                                 const IconComponent = social.icon;
                                 return (
                                     <a
-                                        key={index}
+                                        key={social.name}
                                         href={social.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
@@ -134,6 +134,6 @@ const Footer = () => {
             </div>
         </footer>
     );
-};
+});
 
 export default Footer;
