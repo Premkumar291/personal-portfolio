@@ -1,16 +1,21 @@
+'use client';
+
+// Navbar is a Client Component — requires useState (mobile menu) and
+// usePathname (active link detection). Everything else in layout.jsx is Server.
 import React, { useState, useMemo } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 
 const Navbar = React.memo(() => {
     const [isOpen, setIsOpen] = useState(false);
-    const location = useLocation();
+    const pathname = usePathname();
 
     const navLinks = useMemo(() => [
-        { name: 'Home', href: '/', isRoute: true },
-        { name: 'Projects', href: '/projects', isRoute: true },
-        { name: 'Contact', href: '/contact', isRoute: true },
-        { name: 'About', href: '/about', isRoute: true }
+        { name: 'Home', href: '/' },
+        { name: 'Projects', href: '/projects' },
+        { name: 'Contact', href: '/contact' },
+        { name: 'About', href: '/about' },
     ], []);
 
     return (
@@ -19,23 +24,24 @@ const Navbar = React.memo(() => {
                 {/* Desktop Menu - Centered Pill Container */}
                 <div className="hidden md:flex items-center gap-1 bg-[#1a1a1d] rounded-full px-8 py-4 border border-gray-800/50">
                     {navLinks.map((link) => {
-                        const isActive = location.pathname === link.href ||
-                            (link.href !== '/' && location.pathname.startsWith(link.href));
+                        const isActive =
+                            pathname === link.href ||
+                            (link.href !== '/' && pathname.startsWith(link.href));
 
                         return (
                             <Link
                                 key={link.name}
-                                to={link.href}
-                                className={`relative px-6 py-2 text-sm font-normal transition-all duration-300 ${isActive
-                                    ? 'text-gray-400'
-                                    : 'text-white hover:text-gray-300'
-                                    }`}
+                                href={link.href}
+                                className={`relative px-6 py-2 text-sm font-normal transition-all duration-300 ${
+                                    isActive ? 'text-gray-400' : 'text-white hover:text-gray-300'
+                                }`}
                             >
                                 {link.name}
                                 {/* Animated underline */}
                                 <span
-                                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] bg-gray-400 transition-all duration-500 ease-out origin-center ${isActive ? 'w-[60%] scale-x-100' : 'w-[60%] scale-x-0'
-                                        }`}
+                                    className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] bg-gray-400 transition-all duration-500 ease-out origin-center ${
+                                        isActive ? 'w-[60%] scale-x-100' : 'w-[60%] scale-x-0'
+                                    }`}
                                 />
                             </Link>
                         );
@@ -46,6 +52,7 @@ const Navbar = React.memo(() => {
                 <button
                     className="md:hidden text-white focus:outline-none bg-[#1a1a1d] p-3 rounded-full border border-gray-800/50"
                     onClick={() => setIsOpen(!isOpen)}
+                    aria-label="Toggle navigation menu"
                 >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
@@ -56,22 +63,20 @@ const Navbar = React.memo(() => {
                 <div className="md:hidden absolute top-full left-0 w-full bg-[#1a1a1d] border-t border-gray-800 mt-4">
                     <div className="flex flex-col p-6 gap-4">
                         {navLinks.map((link) => {
-                            const isActive = location.pathname === link.href ||
-                                (link.href !== '/' && location.pathname.startsWith(link.href));
+                            const isActive =
+                                pathname === link.href ||
+                                (link.href !== '/' && pathname.startsWith(link.href));
 
                             return (
                                 <Link
                                     key={link.name}
-                                    to={link.href}
+                                    href={link.href}
                                     onClick={() => setIsOpen(false)}
-                                    className={`relative text-lg font-normal transition-all duration-300 ${isActive
-                                        ? 'text-gray-400'
-                                        : 'text-white hover:text-gray-300'
-                                        }`}
+                                    className={`relative text-lg font-normal transition-all duration-300 ${
+                                        isActive ? 'text-gray-400' : 'text-white hover:text-gray-300'
+                                    }`}
                                 >
                                     {link.name}
-                                    {/* Animated underline */}
-
                                 </Link>
                             );
                         })}
@@ -81,5 +86,7 @@ const Navbar = React.memo(() => {
         </nav>
     );
 });
+
+Navbar.displayName = 'Navbar';
 
 export default Navbar;

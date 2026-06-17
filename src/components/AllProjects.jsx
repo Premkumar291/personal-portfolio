@@ -1,31 +1,26 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { projects } from '../data/projects';
-import Footer from './Footer';
-import { Github, Globe, AlertCircle, ArrowLeft } from 'lucide-react';
+'use client';
+
+// AllProjects — Client Component (uses Background which needs client rendering).
+import React from 'react';
+import Link from 'next/link';
+import { projects } from '@/data/projects';
+import { Github, Globe, AlertCircle } from 'lucide-react';
 import { Background } from './backgroundAnimation';
 
 const AllProjects = React.memo(() => {
-    // Scroll to top on mount
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
     return (
         <div className="bg-[#050505] min-h-screen relative overflow-hidden">
             <Background />
 
             <div className="pt-24 md:pt-32 pb-20 px-6 relative z-10">
                 <div className="max-w-6xl mx-auto">
-
-
                     {/* Header */}
                     <div className="text-right mb-24">
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
                             Project Highlights
                         </h2>
                         <div className="flex justify-end items-center gap-4">
-                            <div className="h-2 w-32 bg-[#333] rounded-full"></div>
+                            <div className="h-2 w-32 bg-[#333] rounded-full" />
                             <p className="text-gray-400 text-sm max-w-md text-right leading-relaxed">
                                 Discover a curated collection of innovative projects showcasing creativity, technical skill, and inspiration. Search
                             </p>
@@ -39,7 +34,7 @@ const AllProjects = React.memo(() => {
                                 key={project.id}
                                 className="relative border border-gray-800 bg-black/40 backdrop-blur-sm p-6 md:p-10 rounded-lg group hover:border-gray-600 transition-colors"
                             >
-                                {/* Center Title Overlay similar to design */}
+                                {/* Center Title Overlay */}
                                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-[#050505] px-6 py-2 text-xl md:text-2xl text-gray-400 font-medium tracking-wide z-20">
                                     {project.title}
                                 </div>
@@ -48,13 +43,15 @@ const AllProjects = React.memo(() => {
                                     {/* Project Image */}
                                     <div className="w-full md:w-1/2 relative">
                                         <div className="relative rounded-lg overflow-hidden border border-gray-800 aspect-video shadow-2xl">
+                                            {/* eslint-disable-next-line @next/next/no-img-element */}
                                             <img
                                                 src={project.image}
                                                 alt={project.title}
                                                 className="w-full h-full object-cover"
+                                                loading="lazy"
                                             />
                                             {/* Browser Header Simulation */}
-                                            <div className="absolute top-0 left-0 w-full h-6 bg-[#1a1a1a] flex items-center gap-1.5 px-3">
+                                            <div className="absolute top-0 left-0 w-full h-6 bg-[#1a1a1a] flex items-center gap-1.5 px-3 z-10">
                                                 <div className="w-2 h-2 rounded-full bg-red-500/50" />
                                                 <div className="w-2 h-2 rounded-full bg-yellow-500/50" />
                                                 <div className="w-2 h-2 rounded-full bg-green-500/50" />
@@ -67,7 +64,6 @@ const AllProjects = React.memo(() => {
                                         <h3 className="hidden md:block text-2xl font-bold text-white mb-6">
                                             {project.title}
                                         </h3>
-
                                         <p className="text-gray-400 leading-relaxed mb-10 font-light text-sm md:text-base">
                                             {project.description}
                                         </p>
@@ -109,7 +105,7 @@ const AllProjects = React.memo(() => {
                                             )}
 
                                             <Link
-                                                to={`/projects/${project.id}`}
+                                                href={`/projects/${project.id}`}
                                                 className="flex items-center gap-2 px-6 py-2 border border-gray-700 text-white text-sm hover:bg-white/5 transition-colors rounded-sm tracking-wider uppercase font-medium"
                                             >
                                                 View Details
@@ -122,9 +118,10 @@ const AllProjects = React.memo(() => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 });
+
+AllProjects.displayName = 'AllProjects';
 
 export default AllProjects;

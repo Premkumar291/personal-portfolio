@@ -1,6 +1,13 @@
-import React, { useMemo } from 'react';
+/**
+ * Footer — Server Component (no "use client").
+ *
+ * Optimization: by removing React hooks (useMemo) and React.memo,
+ * this component runs on the server at build time. Its HTML is
+ * included in the initial response and requires zero client JS.
+ * The contact/social data is module-level constants — evaluated once.
+ */
 
-// Icon Components
+// Icon Components (inline SVG — no external icon library needed here)
 const EmailIcon = () => (
     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
         <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
@@ -32,42 +39,19 @@ const LeetCodeIcon = () => (
     </svg>
 );
 
-const Footer = React.memo(() => {
-    // Contact Information Array
-    const contactInfo = useMemo(() => [
-        {
-            type: 'email',
-            label: 'premkumar.29105@gmail.com',
-            href: 'mailto:premkumar.29105@gmail.com',
-            icon: EmailIcon
-        },
-        {
-            type: 'phone',
-            label: '+91 6382057380',
-            href: 'tel:+916382057380',
-            icon: PhoneIcon
-        }
-    ], []);
+// Static data — module-level constants, evaluated once at build time
+const contactInfo = [
+    { type: 'email', label: 'premkumar.29105@gmail.com', href: 'mailto:premkumar.29105@gmail.com', Icon: EmailIcon },
+    { type: 'phone', label: '+91 6382057380', href: 'tel:+916382057380', Icon: PhoneIcon },
+];
 
-    // Social Links Array
-    const socialLinks = useMemo(() => [
-        {
-            name: 'LinkedIn',
-            url: 'https://www.linkedin.com/in/premkumar-p-8247aa314',
-            icon: LinkedInIcon
-        },
-        {
-            name: 'GitHub',
-            url: 'https://github.com/Premkumar291',
-            icon: GitHubIcon
-        },
-        {
-            name: 'LeetCode',
-            url: 'https://leetcode.com/u/Prem291/',
-            icon: LeetCodeIcon
-        }
-    ], []);
+const socialLinks = [
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/premkumar-p-8247aa314', Icon: LinkedInIcon },
+    { name: 'GitHub', url: 'https://github.com/Premkumar291', Icon: GitHubIcon },
+    { name: 'LeetCode', url: 'https://leetcode.com/u/Prem291/', Icon: LeetCodeIcon },
+];
 
+export default function Footer() {
     return (
         <footer className="relative z-10 bg-[#0f0f11] border-t border-gray-800 py-12">
             <div className="max-w-7xl mx-auto px-6">
@@ -86,40 +70,30 @@ const Footer = React.memo(() => {
                     {/* Contact Information */}
                     <div className="flex flex-col gap-3 text-sm text-gray-400 text-center lg:text-left items-center lg:items-start">
                         <h3 className="text-white font-semibold mb-1">Contact</h3>
-                        {contactInfo.map((contact) => {
-                            const IconComponent = contact.icon;
-                            return (
-                                <a
-                                    key={contact.type}
-                                    href={contact.href}
-                                    className="hover:text-white transition-colors flex items-center gap-2"
-                                >
-                                    <IconComponent />
-                                    {contact.label}
-                                </a>
-                            );
-                        })}
+                        {contactInfo.map(({ type, href, label, Icon }) => (
+                            <a key={type} href={href} className="hover:text-white transition-colors flex items-center gap-2">
+                                <Icon />
+                                {label}
+                            </a>
+                        ))}
                     </div>
 
                     {/* Social Links */}
                     <div className="flex flex-col gap-3 items-center lg:items-start">
                         <h3 className="text-white font-semibold text-sm mb-1">Connect</h3>
                         <div className="flex gap-4">
-                            {socialLinks.map((social) => {
-                                const IconComponent = social.icon;
-                                return (
-                                    <a
-                                        key={social.name}
-                                        href={social.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-gray-400 hover:text-white transition-colors"
-                                        aria-label={social.name}
-                                    >
-                                        <IconComponent />
-                                    </a>
-                                );
-                            })}
+                            {socialLinks.map(({ name, url, Icon }) => (
+                                <a
+                                    key={name}
+                                    href={url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-gray-400 hover:text-white transition-colors"
+                                    aria-label={name}
+                                >
+                                    <Icon />
+                                </a>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -134,6 +108,4 @@ const Footer = React.memo(() => {
             </div>
         </footer>
     );
-});
-
-export default Footer;
+}

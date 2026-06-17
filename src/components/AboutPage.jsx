@@ -1,23 +1,21 @@
-import React, { useEffect } from 'react';
+'use client';
+
+import React from 'react';
 import { motion } from 'framer-motion';
-import PageTransition from '../components/PageTransition';
-import { Background } from '../components/backgroundAnimation';
-import Footer from '../components/Footer';
+import PageTransition from '@/components/PageTransition';
+import { Background } from '@/components/backgroundAnimation';
 
 const skills = {
     left: ['JavaScript', 'React.js ', 'CSS - Tailwind CSS', 'CSS - Bootstrap'],
-    right: ['Node.js - Express', 'MySQL - MongoDB', 'Git - Github']
+    right: ['Node.js - Express', 'MySQL - MongoDB', 'Git - Github'],
 };
 
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
-        transition: {
-            staggerChildren: 0.2,
-            delayChildren: 0.1
-        }
-    }
+        transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+    },
 };
 
 const itemVariants = {
@@ -25,26 +23,16 @@ const itemVariants = {
     visible: {
         opacity: 1,
         y: 0,
-        transition: {
-            duration: 0.6,
-            ease: 'easeOut'
-        }
-    }
+        transition: { duration: 0.6, ease: 'easeOut' },
+    },
 };
 
 const AboutPage = React.memo(() => {
-    // Scroll to top on mount
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
     return (
         <PageTransition>
             <div className="min-h-screen bg-black text-gray-100 font-sans relative overflow-hidden">
-                {/* Background Animation */}
                 <Background />
 
-                {/* Main content */}
                 <motion.div
                     className="relative z-10 max-w-4xl mx-auto px-6 py-12"
                     variants={containerVariants}
@@ -54,7 +42,6 @@ const AboutPage = React.memo(() => {
                     {/* About Section */}
                     <motion.section variants={itemVariants} className="mb-16 mt-20 md:mt-30">
                         <div className="flex flex-col md:flex-row gap-12 items-start">
-                            {/* Text content */}
                             <div className="flex-1">
                                 <h1 className="text-4xl font-bold mb-4 text-white">About me</h1>
                                 <p className="text-gray-400 leading-relaxed text-sm">
@@ -148,11 +135,11 @@ const AboutPage = React.memo(() => {
                         </ul>
                     </motion.section>
                 </motion.div>
-
-
             </div>
         </PageTransition>
     );
 });
+
+AboutPage.displayName = 'AboutPage';
 
 export default AboutPage;
