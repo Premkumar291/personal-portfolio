@@ -15,16 +15,13 @@ const outfit = Outfit({
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'),
-  title: {
-    default: 'Premkumar P | Portfolio',
-    template: '%s | Premkumar P',
-  },
+  title: 'Premkumar P',
   description:
     'Personal portfolio of Premkumar P — Full Stack Developer (MERN). Showcasing projects built with React, Node.js, MongoDB, and modern web technologies.',
   keywords: ['Premkumar P', 'Portfolio', 'Full Stack Developer', 'MERN', 'React', 'Node.js'],
   authors: [{ name: 'Premkumar P' }],
   openGraph: {
-    title: 'Premkumar P | Portfolio',
+    title: 'Premkumar P',
     description:
       'Explore the projects and skills of Premkumar P, a passionate Full Stack Developer.',
     images: ['/logo.png'],
@@ -32,7 +29,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Premkumar P | Portfolio',
+    title: 'Premkumar P',
     description:
       'Explore the projects and skills of Premkumar P, a passionate Full Stack Developer.',
     images: ['/logo.png'],

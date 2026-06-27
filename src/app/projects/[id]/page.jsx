@@ -21,11 +21,11 @@ export async function generateMetadata({ params }) {
   const project = projects.find((p) => p.id === id);
 
   if (!project) {
-    return { title: 'Project Not Found' };
+    return { title: 'Premkumar P' };
   }
 
   return {
-    title: project.title,
+    title: 'Premkumar P',
     description: project.description,
     openGraph: {
       title: `${project.title} | Premkumar P`,

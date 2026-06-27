@@ -4,7 +4,6 @@ import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
 
 export const metadata = {
-  title: 'Home',
   description:
     'Premkumar P — Full Stack Developer (MERN). Explore my work, projects, and skills.',
 };
