@@ -13,7 +13,7 @@ const outfit = Outfit({
   adjustFontFallback: false,
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://premkumar.dev';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://prem29.me';
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
