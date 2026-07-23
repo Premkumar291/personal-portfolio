@@ -3,7 +3,14 @@
 // Search engines use this to discover and crawl all your pages.
 import { projects } from '@/data/projects';
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://premkumar.dev';
+const getBaseUrl = () => {
+  if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
+  return 'https://premkumar.dev';
+};
+
+const BASE_URL = getBaseUrl();
 
 export default function sitemap() {
   // Static routes
