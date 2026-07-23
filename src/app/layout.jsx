@@ -73,6 +73,9 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    google: 'DjLD1eg2HHK3ZS6fpB2mQLtVR-02i4A1rf_C9EW1ljg',
+  },
   icons: {
     icon: '/logo.png',
   },
