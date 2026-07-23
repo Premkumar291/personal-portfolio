@@ -4,8 +4,12 @@ import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
 
 export const metadata = {
+  title: 'Full Stack Developer (MERN)',
   description:
-    'Premkumar P — Full Stack Developer (MERN). Explore my work, projects, and skills.',
+    'Premkumar P — Full Stack Developer (MERN). Explore my web applications, featured projects, and software development skills.',
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function HomePage() {
@@ -16,3 +20,4 @@ export default function HomePage() {
     </>
   );
 }
+

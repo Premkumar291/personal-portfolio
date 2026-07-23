@@ -3,10 +3,15 @@
 import ContactPage from '@/components/ContactPage';
 
 export const metadata = {
+  title: 'Contact',
   description:
-    'Get in touch with Premkumar P. Send a message through the contact form or reach out via email.',
+    'Get in touch with Premkumar P. Contact me for freelance opportunities, full-stack software development projects, or collaborations.',
+  alternates: {
+    canonical: '/contact',
+  },
 };
 
 export default function ContactRoute() {
   return <ContactPage />;
 }
+

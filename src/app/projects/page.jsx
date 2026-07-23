@@ -3,10 +3,15 @@
 import AllProjects from '@/components/AllProjects';
 
 export const metadata = {
+  title: 'Projects & Portfolio',
   description:
-    'Browse all projects built by Premkumar P — full-stack web apps, SaaS tools, and more using the MERN stack.',
+    'Browse all web applications built by Premkumar P — featuring full-stack projects, SaaS tools, and MERN stack applications.',
+  alternates: {
+    canonical: '/projects',
+  },
 };
 
 export default function ProjectsRoute() {
   return <AllProjects />;
 }
+
