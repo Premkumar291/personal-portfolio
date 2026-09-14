@@ -126,7 +126,7 @@ const AboutPage = React.memo(() => {
                             </li>
                             <li className="flex items-start">
                                 <span className="mr-3">•</span>
-                                <span>Playing Batmiton</span>
+                                <span>Badminton Enthusiast</span>
                             </li>
                             <li className="flex items-start">
                                 <span className="mr-3">•</span>
